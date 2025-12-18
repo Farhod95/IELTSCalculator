@@ -4,69 +4,86 @@
     {
         private static void Main(string[] args)
         {
-            Console.WriteLine("\n  ***   IELTS ballarini hisoblash kalkulyatori   *** \n");
+            Console.WriteLine("==============================================================");
+            Console.WriteLine("        IELTS BALLARINI HISOBLASH KALKULYATORI");
+            Console.WriteLine("==============================================================\n");
 
-            // LISTENING ballni xisoblash
+            // ================= LISTENING =================
             double listeningValue1 = 0;
             bool savol1 = false;
             while (!savol1)
             {
                 savol1 = true;
-                Console.WriteLine(" LISTENING (Tinglab tushunish) ");
+                Console.WriteLine("--------------------------------------------------------------");
+                Console.WriteLine(" LISTENING (Tinglab tushunish)");
+                Console.WriteLine("--------------------------------------------------------------");
                 Savol40taNechtasigaTogriJavobBerdingiz();
-               
+
                 ListeningBall(Console.ReadLine(), ref listeningValue1);
                 if (listeningValue1 == 10)
                 {
+                    Console.WriteLine("--------------------------------------------------------------");
                     if (QaytaIshgaTushirishniAniqlash()) { savol1 = false; continue; }
                     else { return; }
                 }
-                else { Console.WriteLine($"  \n LISTENING (Tinglab tushunish) dan olgan yakuniy ballingiz: {listeningValue1}"); }
+                else
+                {
+                    Console.WriteLine("--------------------------------------------------------------");
+                    Console.WriteLine($" LISTENING yakuniy ball: {listeningValue1}");
+                }
             }
 
-            // READING ballni xisoblash
+            // ================= READING =================
             double readingValue1 = 0;
             bool savol2 = false;
             while (!savol2)
             {
                 savol2 = true;
-                Console.WriteLine(" \n \n READING (O‘qish) ");
-                Savol40taNechtasigaTogriJavobBerdingiz(); 
-                
+                Console.WriteLine("\n--------------------------------------------------------------");
+                Console.WriteLine(" READING (O‘qish)");
+                Console.WriteLine("--------------------------------------------------------------");
+                Savol40taNechtasigaTogriJavobBerdingiz();
+
                 ReadingBall(Console.ReadLine(), ref readingValue1);
                 if (readingValue1 == 10)
                 {
+                    Console.WriteLine("--------------------------------------------------------------");
                     if (QaytaIshgaTushirishniAniqlash()) { savol2 = false; continue; }
                     else { return; }
                 }
-                else { Console.WriteLine($"  \n READING (O‘qish) dan olgan yakuniy ballingiz: {readingValue1}"); }
+                else
+                {
+                    Console.WriteLine("--------------------------------------------------------------");
+                    Console.WriteLine($" READING yakuniy ball: {readingValue1}");
+                }
             }
 
-
-            // WRITING ballni xisoblash
-            Console.WriteLine(" \n \n WRITING (Yozish) ");
+            // ================= WRITING =================
+            Console.WriteLine("\n==============================================================");
+            Console.WriteLine(" WRITING (Yozish)");
+            Console.WriteLine("==============================================================");
             QuyidagiTasklardanOlinganBaholarniKiritish();
 
-            double taskResponseValue = 0 ;
+            double taskResponseValue = 0;
             bool savol3 = false;
             while (!savol3)
             {
                 savol3 = true;
-                Console.Write("   -Task Response -> Vazifaga javob berish: ");
+                Console.Write(" Task Response: ");
                 if (double.TryParse(Console.ReadLine(), out taskResponseValue))
                 {
                     if (taskResponseValue > 9 || taskResponseValue < 0)
                     {
                         NotogriBahoKiritildi();
                         if (QaytaIshgaTushirishniAniqlash()) { savol3 = false; continue; }
-                        else { return; };
+                        else { return; }
                     }
                 }
                 else
                 {
                     KlvFaqatRaqamKirit();
                     if (QaytaIshgaTushirishniAniqlash()) { savol3 = false; continue; }
-                    else { return; }                    
+                    else { return; }
                 }
             }
 
@@ -74,19 +91,19 @@
             bool savol4 = false;
             while (!savol4)
             {
-                savol4=true;
-                Console.Write("   -Coherence/Cohesion -> Mantiqiylik va bog‘liqlik: ");
+                savol4 = true;
+                Console.Write(" Coherence/Cohesion: ");
                 if (double.TryParse(Console.ReadLine(), out taskCoherenceValue))
                 {
-                    if (taskCoherenceValue > 9 || taskCoherenceValue < 0) 
-                    { 
+                    if (taskCoherenceValue > 9 || taskCoherenceValue < 0)
+                    {
                         NotogriBahoKiritildi();
                         if (QaytaIshgaTushirishniAniqlash()) { savol4 = false; continue; }
                         else { return; }
                     }
                 }
-                else 
-                { 
+                else
+                {
                     KlvFaqatRaqamKirit();
                     if (QaytaIshgaTushirishniAniqlash()) { savol4 = false; continue; }
                     else { return; }
@@ -97,18 +114,18 @@
             bool savol5 = false;
             while (!savol5)
             {
-                savol5=true;
-                Console.Write("   -Lexical Resource -> Leksik boylik (so‘z boyligi): ");
+                savol5 = true;
+                Console.Write(" Lexical Resource: ");
                 if (double.TryParse(Console.ReadLine(), out taskLexicalValue))
                 {
-                    if (taskLexicalValue > 9 || taskLexicalValue < 0) 
+                    if (taskLexicalValue > 9 || taskLexicalValue < 0)
                     {
                         NotogriBahoKiritildi();
                         if (QaytaIshgaTushirishniAniqlash()) { savol5 = false; continue; }
                         else { return; }
                     }
                 }
-                else 
+                else
                 {
                     KlvFaqatRaqamKirit();
                     if (QaytaIshgaTushirishniAniqlash()) { savol5 = false; continue; }
@@ -121,50 +138,52 @@
             while (!savol6)
             {
                 savol6 = true;
-                Console.Write("   -Grammar -> Gramatika: ");
+                Console.Write(" Grammar: ");
                 if (double.TryParse(Console.ReadLine(), out taskGrammarValue))
                 {
-                    if (taskGrammarValue > 9 || taskGrammarValue < 0) 
-                    { 
+                    if (taskGrammarValue > 9 || taskGrammarValue < 0)
+                    {
                         NotogriBahoKiritildi();
                         if (QaytaIshgaTushirishniAniqlash()) { savol6 = false; continue; }
                         else { return; }
                     }
                 }
-                else 
-                { 
+                else
+                {
                     KlvFaqatRaqamKirit();
                     if (QaytaIshgaTushirishniAniqlash()) { savol6 = false; continue; }
                     else { return; }
                 }
             }
-            
+
             double writingValue11 = 0;
             WritingBall(taskResponseValue, taskCoherenceValue, taskLexicalValue, taskGrammarValue, ref writingValue11);
-            Console.WriteLine($" \n \n WRITING (Yozish) dan olgan yakuniy ballingiz: {writingValue11}");
+            Console.WriteLine("--------------------------------------------------------------");
+            Console.WriteLine($" WRITING yakuniy ball: {writingValue11}");
 
-
-            // SPEAKING ballni xisoblash
-            Console.WriteLine(" \n \n SPEAKING (GAPIRISH) ");
+            // ================= SPEAKING =================
+            Console.WriteLine("\n==============================================================");
+            Console.WriteLine(" SPEAKING (Gapirish)");
+            Console.WriteLine("==============================================================");
             QuyidagiTasklardanOlinganBaholarniKiritish();
 
             double taskFluencyValue = 0;
             bool savol7 = false;
             while (!savol7)
             {
-                savol7=true;
-                Console.Write("   -Fluency and Coherence -> Ravonlik va mantiq: ");
+                savol7 = true;
+                Console.Write(" Fluency and Coherence: ");
                 if (double.TryParse(Console.ReadLine(), out taskFluencyValue))
                 {
-                    if (taskFluencyValue > 9 || taskFluencyValue < 0) 
+                    if (taskFluencyValue > 9 || taskFluencyValue < 0)
                     {
                         NotogriBahoKiritildi();
                         if (QaytaIshgaTushirishniAniqlash()) { savol7 = false; continue; }
                         else { return; }
                     }
                 }
-                else 
-                { 
+                else
+                {
                     KlvFaqatRaqamKirit();
                     if (QaytaIshgaTushirishniAniqlash()) { savol7 = false; continue; }
                     else { return; }
@@ -176,18 +195,18 @@
             while (!savol8)
             {
                 savol8 = true;
-                Console.Write("   -Lexical Resource -> So‘z boyligi: ");
+                Console.Write(" Lexical Resource: ");
                 if (double.TryParse(Console.ReadLine(), out taskResourceValue))
                 {
-                    if (taskResourceValue > 9 || taskResourceValue < 0) 
+                    if (taskResourceValue > 9 || taskResourceValue < 0)
                     {
                         NotogriBahoKiritildi();
                         if (QaytaIshgaTushirishniAniqlash()) { savol8 = false; continue; }
                         else { return; }
                     }
                 }
-                else 
-                { 
+                else
+                {
                     KlvFaqatRaqamKirit();
                     if (QaytaIshgaTushirishniAniqlash()) { savol8 = false; continue; }
                     else { return; }
@@ -199,18 +218,18 @@
             while (!savol9)
             {
                 savol9 = true;
-                Console.Write("   -Grammatical Range and Accuracy -> Grammatika: ");
+                Console.Write(" Grammatical Accuracy: ");
                 if (double.TryParse(Console.ReadLine(), out taskAccuracyValue))
                 {
-                    if (taskAccuracyValue > 9 || taskAccuracyValue < 0) 
+                    if (taskAccuracyValue > 9 || taskAccuracyValue < 0)
                     {
                         NotogriBahoKiritildi();
                         if (QaytaIshgaTushirishniAniqlash()) { savol9 = false; continue; }
                         else { return; }
                     }
                 }
-                else 
-                { 
+                else
+                {
                     KlvFaqatRaqamKirit();
                     if (QaytaIshgaTushirishniAniqlash()) { savol9 = false; continue; }
                     else { return; }
@@ -222,33 +241,35 @@
             while (!savol10)
             {
                 savol10 = true;
-                Console.Write("   -Pronunciation -> Talaffuz: ");
+                Console.Write(" Pronunciation: ");
                 if (double.TryParse(Console.ReadLine(), out taskPronunciationValue))
                 {
-                    if (taskPronunciationValue > 9 || taskPronunciationValue < 0) 
+                    if (taskPronunciationValue > 9 || taskPronunciationValue < 0)
                     {
                         NotogriBahoKiritildi();
                         if (QaytaIshgaTushirishniAniqlash()) { savol10 = false; continue; }
                         else { return; }
                     }
                 }
-                else 
+                else
                 {
                     KlvFaqatRaqamKirit();
                     if (QaytaIshgaTushirishniAniqlash()) { savol10 = false; continue; }
                     else { return; }
                 }
             }
-                
+
             double speakingValue11 = 0;
-            SpeakingBall(taskFluencyValue, taskResourceValue, taskAccuracyValue, taskPronunciationValue, ref speakingValue11);  // Metod      
-            Console.WriteLine($" \n \n SPEAKING (Gapirish) dan olgan yakuniy ballingiz: {speakingValue11}");
+            SpeakingBall(taskFluencyValue, taskResourceValue, taskAccuracyValue, taskPronunciationValue, ref speakingValue11);
+            Console.WriteLine("--------------------------------------------------------------");
+            Console.WriteLine($" SPEAKING yakuniy ball: {speakingValue11}");
 
-
-            // Yakuniy ballni hisoblash
+            // ================= FINAL =================
             double ieltsValue1 = 0;
             IELTSBall(listeningValue1, readingValue1, writingValue11, speakingValue11, ref ieltsValue1);
-            Console.WriteLine($" \n \n **** IELTS dan olgan yakuniy ballingiz: {ieltsValue1}   ****");
+            Console.WriteLine("\n==============================================================");
+            Console.WriteLine($" IELTS YAKUNIY BALL: {ieltsValue1}");
+            Console.WriteLine("==============================================================");
         }
 
         // LISTENING ballni xisoblash metodi
