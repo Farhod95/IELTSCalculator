@@ -1,3 +1,4 @@
+![Console App Demo](Assets/animation.gif)
 # 🎓 IELTS Calculator (C# Console Applicat)
 
 <p align="center">
