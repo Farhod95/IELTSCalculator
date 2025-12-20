@@ -1,4 +1,4 @@
-# 🎓 IELTS Calculator (C# Console Application)
+# 🎓 IELTS Calculator (C# Console Applicat)
 
 <p align="center">
   <img src="https://img.icons8.com/color/96/test-passed.png" alt="IELTS Icon"/>
